@@ -9,7 +9,7 @@ exports.bootDroplet = function (dropletId) {
 		uri: `droplets/${dropletId}/actions`,
 		auth: {
 			bearer: process.env.DO_TOKEN
-		}
+		},
 		body: {
 				type: 'power_on'
 		},
@@ -26,7 +26,7 @@ exports.shutdownDroplet = function (dropletId) {
 		uri: `droplets/${dropletId}/actions`,
 		auth: {
 			bearer: process.env.DO_TOKEN
-		}
+		},
 		body: {
 				type: 'shutdown'
 		},
