@@ -6,6 +6,7 @@ const makeRequest = require('request-promise');
 exports.bootDroplet = function (dropletId) {
 	const options = {
 		baseUrl: process.env.DO_BASEURL,
+		method: 'POST',
 		uri: `droplets/${dropletId}/actions`,
 		auth: {
 			bearer: process.env.DO_TOKEN
@@ -23,6 +24,7 @@ exports.bootDroplet = function (dropletId) {
 exports.shutdownDroplet = function (dropletId) {
 	const options = {
 		baseUrl: process.env.DO_BASEURL,
+		method: 'POST',
 		uri: `droplets/${dropletId}/actions`,
 		auth: {
 			bearer: process.env.DO_TOKEN

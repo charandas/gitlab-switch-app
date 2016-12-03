@@ -19,12 +19,11 @@ app.get('/up/:dropletName', function (req, res, next) {
 		case 'fathm-gitlab':
 			digitalocean
 				.bootDroplet(process.env.DO_GITLAB_DROPLET_ID)
-				.asCallback(next)
+				.then(res.status(200).send(`Started ${req.params.dropletName}`));
 			break;
 		default:
 			res.status(500).send('Unsure what you want?');
 			break;
-
 	}
 });
 
@@ -33,7 +32,7 @@ app.get('/down/:dropletName', function (req, res, next) {
 		case 'fathm-gitlab':
 			digitalocean
 				.shutdownDroplet(process.env.DO_GITLAB_DROPLET_ID)
-				.asCallback(next)
+				.then(res.status(200).send(`Stopped ${req.params.dropletName}`));
 			break;
 		default:
 			res.status(500).send('Unsure what you want?');
