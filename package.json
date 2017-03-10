@@ -25,5 +25,8 @@
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "semistandard": "^10.0.0"
+  }
 }
